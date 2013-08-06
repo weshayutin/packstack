@@ -42,3 +42,4 @@ CONFIG_SWIFT_STORAGE_HOSTS :
         a comma seperate list of swift storage devices
         1.1.1.1  : create a testing loopback device and use this for storage
         1.1.1.1/sdb : use /dev/sdb on 1.1.1.1 as a storage device
+
