@@ -33,7 +33,7 @@ apply puppet labs modules (https://github.com/puppetlabs/)
 
 %prep
 #%setup -n packstack-%{version}
-%setup -n packstack-%{version}dev
+%setup -n openstack-packstack-%{version}dev
 
 # Sanitizing a lot of the files in the puppet modules, they come from seperate upstream projects
 find packstack/puppet/modules \( -name .fixtures.yml -o -name .gemfile -o -name ".travis.yml" -o -name .rspec \) -exec rm {} \;
