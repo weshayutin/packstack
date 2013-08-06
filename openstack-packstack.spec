@@ -2,7 +2,7 @@
 #%global git_revno %GIT_REVNO%
 
 Name:           openstack-packstack
-Version:        2013.2.2
+Version:        2013.2.3
 #Release:       1%{?dist}
 Release:        1.dev%{?dist}
 Summary:        Openstack Install Utility
@@ -75,6 +75,9 @@ install -p -D -m 644 docs/_build/man/*.1 %{buildroot}%{_mandir}/man1/
 %{_mandir}/man1/packstack.1.gz
 
 %changelog
+* Tue Aug 06 2013 wes hayutin <whayutin@redhat.com> 2013.2.3-1.dev
+- fix spec (whayutin@redhat.com)
+
 * Tue Aug 06 2013 wes hayutin <whayutin@redhat.com> 2013.2.2-1.dev
 - new package built with tito
 
