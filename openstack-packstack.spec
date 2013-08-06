@@ -11,7 +11,7 @@ Group:          Applications/System
 License:        ASL 2.0
 URL:            https://github.com/fedora-openstack/packstack
 #Source0:        https://github.com/downloads/fedora-openstack/packstack/packstack-%{version}.tar.gz
-Source0:        https://github.com/downloads/fedora-openstack/packstack/packstack-%{version}dev%{release}.tar.gz
+Source0:        https://github.com/downloads/fedora-openstack/packstack/packstack-%{version}.tar.gz
 
 BuildArch:      noarch
 
