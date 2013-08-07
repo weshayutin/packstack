@@ -44,7 +44,7 @@ Set of Puppet modules used by Packstack to install OpenStack
 %setup -n packstack-%{version}
 
 # RDO build: enabled EPEL and RDO repos on all hosts by default
-%patch1 -p1
+#%patch1 -p1
 
 # Sanitizing a lot of the files in the puppet modules, they come from seperate upstream projects
 find packstack/puppet/modules \( -name .fixtures.yml -o -name .gemfile -o -name ".travis.yml" -o -name .rspec \) -exec rm {} +
