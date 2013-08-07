@@ -41,7 +41,7 @@ Set of Puppet modules used by Packstack to install OpenStack
 
 
 %prep
-%setup -n packstack-%{version}
+%setup -n openstack-packstack-%{version}
 
 # RDO build: enabled EPEL and RDO repos on all hosts by default
 #%patch1 -p1
