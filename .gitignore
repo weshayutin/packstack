@@ -3,3 +3,5 @@
 *.log
 .tox
 packstack.egg-info
+dist/
+setup.cfg
