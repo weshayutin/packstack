@@ -2,9 +2,9 @@
 %global git_revno 691
 
 Name:           openstack-packstack
-Version:        2013.2.1
+Version:        2013.2.2
 #Release:       1%{?dist}
-Release:        0.1.dev%{git_revno}%{?dist}
+Release:        1.dev%{git_revno}%{?dist}
 Summary:        Openstack Install Utility
 
 Group:          Applications/System
@@ -102,6 +102,9 @@ install -p -D -m 644 docs/_build/man/*.1 %{buildroot}%{_mandir}/man1/
 
 
 %changelog
+* Wed Aug 07 2013 wes hayutin <whayutin@redhat.com> 2013.2.2-1.dev691
+- new package built with tito
+
 * Thu Aug 01 2013 Martin Mágr <mmagr@redhat.com> - 2013.2.1-0.1.dev691
 - Added support for Cinder GlusterFS backend configuration (#919607)
 - Added support for linuxbridge (#971770)
