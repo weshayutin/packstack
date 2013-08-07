@@ -11,7 +11,7 @@ Group:          Applications/System
 License:        ASL 2.0 and GPLv2
 URL:            https://github.com/stackforge/packstack
 # Tarball is created by bin/release.sh
-Source0:        http://mmagr.fedorapeople.org/downloads/packstack/packstack-%{version}.tar.gz
+Source0:        http://mmagr.fedorapeople.org/downloads/packstack/openstack-packstack-%{version}.tar.gz
 #Patch1:         enable-epel-and-el6-havana.patch
 
 BuildArch:      noarch
