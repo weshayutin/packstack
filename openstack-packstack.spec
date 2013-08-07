@@ -2,7 +2,7 @@
 #%global git_revno 691
 
 Name:           openstack-packstack
-Version:        2013.2.2
+Version:        2013.2.3
 #Release:       1%{?dist}
 Release:        1%{?dist}
 Summary:        Openstack Install Utility
@@ -102,6 +102,9 @@ install -p -D -m 644 docs/_build/man/*.1 %{buildroot}%{_mandir}/man1/
 
 
 %changelog
+* Wed Aug 07 2013 wes hayutin <whayutin@redhat.com> 2013.2.3-1
+- updated spec (whayutin@redhat.com)
+
 * Wed Aug 07 2013 wes hayutin <whayutin@redhat.com> 2013.2.2-1.dev691
 - new package built with tito
 
