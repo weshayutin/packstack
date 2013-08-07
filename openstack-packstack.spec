@@ -2,7 +2,7 @@
 #%global git_revno 691
 
 Name:           openstack-packstack
-Version:        2013.2.5
+Version:        2013.2.7
 #Release:       1%{?dist}
 Release:        1%{?dist}
 Summary:        Openstack Install Utility
@@ -102,6 +102,9 @@ install -p -D -m 644 docs/_build/man/*.1 %{buildroot}%{_mandir}/man1/
 
 
 %changelog
+* Wed Aug 07 2013 wes hayutin <whayutin@redhat.com>
+- change source line in spec (whayutin@redhat.com)
+
 * Wed Aug 07 2013 wes hayutin <whayutin@redhat.com> 2013.2.5-1
 - change setup name from packstack to openstack-packstack (whayutin@redhat.com)
 
