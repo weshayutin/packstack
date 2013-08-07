@@ -1,18 +1,18 @@
 
-%global git_revno 691
+#%global git_revno 691
 
 Name:           openstack-packstack
 Version:        2013.2.2
 #Release:       1%{?dist}
-Release:        1.dev%{git_revno}%{?dist}
+Release:        1%{?dist}
 Summary:        Openstack Install Utility
 
 Group:          Applications/System
 License:        ASL 2.0 and GPLv2
 URL:            https://github.com/stackforge/packstack
 # Tarball is created by bin/release.sh
-Source0:        http://mmagr.fedorapeople.org/downloads/packstack/packstack-%{version}dev%{git_revno}.tar.gz
-Patch1:         enable-epel-and-el6-havana.patch
+Source0:        http://mmagr.fedorapeople.org/downloads/packstack/packstack-%{version}.tar.gz
+#Patch1:         enable-epel-and-el6-havana.patch
 
 BuildArch:      noarch
 
@@ -41,7 +41,7 @@ Set of Puppet modules used by Packstack to install OpenStack
 
 
 %prep
-%setup -n packstack-%{version}dev%{git_revno}
+%setup -n packstack-%{version}
 
 # RDO build: enabled EPEL and RDO repos on all hosts by default
 %patch1 -p1
