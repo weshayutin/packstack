@@ -4,7 +4,7 @@
 Name:           openstack-packstack
 Version:        2013.2.8
 #Release:       1%{?dist}
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Openstack Install Utility
 
 Group:          Applications/System
@@ -102,6 +102,9 @@ install -p -D -m 644 docs/_build/man/*.1 %{buildroot}%{_mandir}/man1/
 
 
 %changelog
+* Thu Aug 08 2013 wes hayutin <whayutin@redhat.com> 2013.2.8-2
+- testing upstream builder and release tagger (whayutin@redhat.com)
+
 * Wed Aug 07 2013 wes hayutin <whayutin@redhat.com> 2013.2.8-1
 - manually bump rev (whayutin@redhat.com)
 - change source line in spec (whayutin@redhat.com)
