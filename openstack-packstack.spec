@@ -111,7 +111,7 @@ install -p -D -m 644 docs/_build/man/*.1 %{buildroot}%{_mandir}/man1/
 %doc LICENSE
 %{_bindir}/packstack
 %{python_sitelib}/packstack
-%{python_sitelib}/openstack-packstack-%{version}*.egg-info
+%{python_sitelib}/openstack_packstack-%{version}*.egg-info
 
 %if 0%{?with_doc}
 %{_mandir}/man1/packstack.1.gz
