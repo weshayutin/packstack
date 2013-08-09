@@ -115,7 +115,7 @@ install -p -D -m 644 docs/_build/man/*.1 %{buildroot}%{_mandir}/man1/
 
 %if 0%{?with_doc}
 %{_mandir}/man1/packstack.1.gz
-fi
+%endif
 
 
 %files -n packstack-modules-puppet
