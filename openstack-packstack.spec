@@ -1,3 +1,4 @@
+%global with_doc %{!?_without_doc:1}%{?_without_doc:0}
 
 #%global git_revno 691
 
@@ -18,11 +19,7 @@ BuildArch:      noarch
 
 BuildRequires:  python2-devel
 BuildRequires:  python-setuptools
-%if 0%{?rhel}
-BuildRequires:  python-sphinx10
-%else
-BuildRequires:  python-sphinx
-%endif
+
 
 Requires:       openssh-clients
 
@@ -38,6 +35,24 @@ Summary:        Set of Puppet modules for OpenStack
 
 %description -n packstack-modules-puppet
 Set of Puppet modules used by Packstack to install OpenStack
+
+
+%if 0%{?with_doc}
+%package doc
+Summary:          Documentation for Packstack
+Group:            Documentation
+
+%if 0%{?rhel}
+BuildRequires:  python-sphinx10
+%else
+BuildRequires:  python-sphinx
+%endif
+
+%description      doc
+Documentation for Packstack
+
+This package contains documentation files for Packstack.
+%endif
 
 
 %prep
@@ -66,11 +81,13 @@ mv packstack/puppet %{_builddir}/puppet
 
 %{__python} setup.py build
 
+%if 0%{?with_doc}
 cd docs
 %if 0%{?rhel}
 make man SPHINXBUILD=sphinx-1.0-build
 %else
 make man
+%endif
 %endif
 
 
@@ -84,8 +101,10 @@ mkdir -p %{buildroot}/%{_datadir}/packstack/
 mv %{_builddir}/puppet %{buildroot}/%{python_sitelib}/packstack/puppet
 cp -r %{buildroot}/%{python_sitelib}/packstack/puppet/modules  %{buildroot}/%{_datadir}/packstack/modules
 
+%if 0%{?with_doc}
 mkdir -p %{buildroot}%{_mandir}/man1
 install -p -D -m 644 docs/_build/man/*.1 %{buildroot}%{_mandir}/man1/
+%endif
 
 
 %files
