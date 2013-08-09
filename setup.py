@@ -12,7 +12,7 @@ def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
 setup(
-    name="packstack",
+    name="openstack-packstack",
     #version=version.version_string(),
     version=version.version_string()[:-1],
     author="Derek Higgins",
