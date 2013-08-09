@@ -13,7 +13,8 @@ def read(fname):
 
 setup(
     name="packstack",
-    version=version.version_string(),
+    #version=version.version_string(),
+    version=version.version_string()[:-1],
     author="Derek Higgins",
     author_email="derekh@redhat.com",
     description=("A utility to install openstack"),
