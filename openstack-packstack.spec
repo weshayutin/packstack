@@ -4,7 +4,7 @@
 
 Name:           openstack-packstack
 Version:        2013.2.8
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Openstack Install Utility
 
 Group:          Applications/System
@@ -124,6 +124,21 @@ install -p -D -m 644 docs/_build/man/*.1 %{buildroot}%{_mandir}/man1/
 
 
 %changelog
+* Mon Aug 12 2013 wes hayutin <whayutin@redhat.com> 2013.2.8-3
+- little clean up (whayutin@redhat.com)
+- get the correct dir for spec file (whayutin@redhat.com)
+- firestack moves the src around a bit, spec file is removed from the root dir,
+  find it in SPECS dir (whayutin@redhat.com)
+- underscore vs hyphen (whayutin@redhat.com)
+- oops.. don't use bash fi (whayutin@redhat.com)
+- fix a few build errors while building in smokestack (whayutin@redhat.com)
+- have to change the name of tarball to openstack-packstack for it to build in
+  smokestack (whayutin@redhat.com)
+- attempt to make packstack spec more like openstack spec files regarding doc
+  (whayutin@redhat.com)
+- not sure why an extra hyphen is added to the end of the version
+  (whayutin@redhat.com)
+
 * Thu Aug 08 2013 wes hayutin <whayutin@redhat.com> 2013.2.8-2
 - testing upstream builder and release tagger (whayutin@redhat.com)
 
