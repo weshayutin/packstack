@@ -32,14 +32,12 @@ Summary:        Set of Puppet modules for OpenStack
 %description -n packstack-modules-puppet
 Set of Puppet modules used by Packstack to install OpenStack
 
-# packstack-modules-puppet package --------------------------------------------
+# packstack documentation package --------------------------------------------
 
 %if 0%{?with_doc}
 %package doc
 Summary:          Documentation for Packstack
 Group:            Documentation
-
-# packstack documentation package --------------------------------------------
 
 %if 0%{?rhel}
 BuildRequires:  python-sphinx10
