@@ -79,7 +79,8 @@ mv packstack/puppet %{_builddir}/puppet
     rm -rf %{_builddir}/puppet/modules/create_resources
 %endif
 
-%{__python} setup.py build
+#%{__python} setup.py build
+%{__python} setup.py sdist
 
 %if 0%{?with_doc}
 cd docs
