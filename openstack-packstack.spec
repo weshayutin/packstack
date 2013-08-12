@@ -72,7 +72,9 @@ find packstack/puppet/modules \( -name spec -o -name ext \) | xargs rm -rf
 
 # Moving this data directory out temporarily as it causes setup.py to throw errors
 #rm -rf %{_builddir}/puppet
-#mv packstack/puppet %{_builddir}/puppet
+echo "COUNT LINES"
+ls packstack/puppet/* | wc -l
+mv packstack/puppet %{_builddir}/puppet
 
 
 %build
@@ -99,9 +101,9 @@ make man
 # Delete tests
 rm -fr %{buildroot}%{python_sitelib}/tests
 
-#mkdir -p %{buildroot}/%{_datadir}/packstack/
-#mv %{_builddir}/puppet %{buildroot}/%{python_sitelib}/packstack/puppet
-#cp -r %{buildroot}/%{python_sitelib}/packstack/puppet/modules  %{buildroot}/%{_datadir}/packstack/modules
+mkdir -p %{buildroot}/%{_datadir}/packstack/
+mv %{_builddir}/puppet %{buildroot}/%{python_sitelib}/packstack/puppet
+cp -r %{buildroot}/%{python_sitelib}/packstack/puppet/modules  %{buildroot}/%{_datadir}/packstack/modules
 
 %if 0%{?with_doc}
 mkdir -p %{buildroot}%{_mandir}/man1
