@@ -58,6 +58,8 @@ This package contains documentation files for Packstack.
 %prep
 %setup -n openstack-packstack-%{version}
 
+%{__python} setup.py sdist
+
 # RDO build: enabled EPEL and RDO repos on all hosts by default
 #%patch1 -p1
 
@@ -79,7 +81,6 @@ mv packstack/puppet %{_builddir}/puppet
     rm -rf %{_builddir}/puppet/modules/create_resources
 %endif
 
-%{__python} setup.py sdist
 %{__python} setup.py build
 
 %if 0%{?with_doc}
