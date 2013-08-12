@@ -1,25 +1,20 @@
 %global with_doc %{!?_without_doc:1}%{?_without_doc:0}
 
-#%global git_revno 691
+# openstack-packstack package -------------------------------------------------
 
 Name:           openstack-packstack
 Version:        2013.2.8
-#Release:       1%{?dist}
 Release:        2%{?dist}
 Summary:        Openstack Install Utility
 
 Group:          Applications/System
 License:        ASL 2.0 and GPLv2
 URL:            https://github.com/stackforge/packstack
-# Tarball is created by bin/release.sh
 Source0:        http://mmagr.fedorapeople.org/downloads/packstack/openstack-packstack-%{version}.tar.gz
-#Patch1:         enable-epel-and-el6-havana.patch
-
 BuildArch:      noarch
 
 BuildRequires:  python2-devel
 BuildRequires:  python-setuptools
-
 
 Requires:       openssh-clients
 
@@ -29,6 +24,7 @@ packstack can be used to deploy various parts of openstack on multiple
 pre installed servers over ssh. It does this by using puppet manifests to
 apply Puppet Labs modules (https://github.com/puppetlabs/)
 
+# packstack-modules-puppet package --------------------------------------------
 
 %package -n packstack-modules-puppet
 Summary:        Set of Puppet modules for OpenStack
@@ -36,11 +32,14 @@ Summary:        Set of Puppet modules for OpenStack
 %description -n packstack-modules-puppet
 Set of Puppet modules used by Packstack to install OpenStack
 
+# packstack-modules-puppet package --------------------------------------------
 
 %if 0%{?with_doc}
 %package doc
 Summary:          Documentation for Packstack
 Group:            Documentation
+
+# packstack documentation package --------------------------------------------
 
 %if 0%{?rhel}
 BuildRequires:  python-sphinx10
@@ -54,6 +53,7 @@ Documentation for Packstack
 This package contains documentation files for Packstack.
 %endif
 
+# Begin Prep ------------------------------------------------------------------
 
 %prep
 %setup -n openstack-packstack-%{version}

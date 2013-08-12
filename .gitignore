@@ -4,4 +4,6 @@
 .tox
 packstack.egg-info
 dist/
+build/
+openstack_packstack.egg-info/
 setup.cfg
