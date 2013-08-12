@@ -4,7 +4,7 @@
 
 Name:           openstack-packstack
 Version:        2013.2.8
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Openstack Install Utility
 
 Group:          Applications/System
@@ -125,6 +125,10 @@ install -p -D -m 644 docs/_build/man/*.1 %{buildroot}%{_mandir}/man1/
 
 
 %changelog
+* Mon Aug 12 2013 wes hayutin <whayutin@redhat.com> 2013.2.8-4
+- do we need build and sdist? (whayutin@redhat.com)
+- testing sdist vs build (whayutin@redhat.com)
+
 * Mon Aug 12 2013 wes hayutin <whayutin@redhat.com> 2013.2.8-3
 - little clean up (whayutin@redhat.com)
 - get the correct dir for spec file (whayutin@redhat.com)
