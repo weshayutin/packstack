@@ -38,18 +38,16 @@ Set of Puppet modules used by Packstack to install OpenStack
 %package doc
 Summary:          Documentation for Packstack
 Group:            Documentation
-%endif
 
 
-%if 0%{?rhel}%{?with_doc:0}
+%if 0%{?rhel}
 BuildRequires:  python-sphinx10
 %endif
 
-%if 0%{?fedora}%{?with_doc:0}
+%if 0%{?fedora}
 BuildRequires:  python-sphinx
 %endif
 
-%if 0%{?with_doc}
 %description      doc
 Documentation for Packstack
 
@@ -89,14 +87,16 @@ mv packstack/puppet %{_builddir}/puppet
 %{__python} setup.py build
 
 %if 0%{?with_doc}
-cd docs
-%endif
 
-%if 0%{?rhel}%{?with_doc:0}
+cd docs
+%if 0%{?rhel}
 make man SPHINXBUILD=sphinx-1.0-build
 %endif
-%if 0%{?fedora}%{?with_doc:0}
+
+%if 0%{?fedora}
 make man
+%endif
+
 %endif
 
 
